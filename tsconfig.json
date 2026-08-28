@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["dom", "es2020", "dom.iterable"],
+    "types": ["jest", "node"],
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/@types"],
+    "paths": {
+      "@inventive-ui/framework": ["./src/index.ts"],
+      "@inventive-ui/framework/*": ["./src/*"]
+    },
+    "skipLibCheck": true,
+    "declaration": false
+  },
+  "include": [
+    "src/**/*",
+    "**/tests/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "iui.config.ts",
+    "iui.config.d.ts"
+  ]
+}

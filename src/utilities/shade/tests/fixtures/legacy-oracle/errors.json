@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "tool": "export-legacy-shade-oracle.mjs",
+  "toolVersion": "1.0.0-g0",
+  "generationPath": "ds-snapshot-fallback",
+  "provenanceManifest": "src/utilities/shade/migration/legacy-shade-provenance.json",
+  "provenanceSha256": "47e06c3ea4f31f9fae12748d37a135f6f5d700e32577260b832b98a5383d1933",
+  "cases": [],
+  "note": "Invalid-request corpus is empty for snapshot fallback; populate via --live re-freeze."
+}

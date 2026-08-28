@@ -1,0 +1,20 @@
+=== git status --porcelain ===
+ M package-lock.json
+ M scripts/createconfig.js
+?? .DS_Store
+?? eslint/.DS_Store
+?? integrations/.DS_Store
+?? src/.DS_Store
+?? src/utilities/shade/migration/
+
+=== git diff HEAD (sha256 below) ===
+DIFF_SHA256=047fbcc79ebf1b2a53effc3eb6ac2034e8a4241490aac0f71af8a9c05e6fc44e
+DIFF_BYTES=3225
+
+=== untracked files ===
+.DS_Store
+eslint/.DS_Store
+integrations/.DS_Store
+src/.DS_Store
+src/utilities/shade/migration/legacy-shade-provenance.json
+UNTRACKED_LIST_SHA256=90c0c4110015f915dda649307139f840ab8cfa031dfb45f6b24020b61b30108e

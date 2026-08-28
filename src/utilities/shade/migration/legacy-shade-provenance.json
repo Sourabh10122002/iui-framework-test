@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "decisionRefs": [
+    "SD-001",
+    "SD-002",
+    "SD-003",
+    "SD-004",
+    "SD-005"
+  ],
+  "gateRefs": [
+    "G0"
+  ],
+  "timestamp": "2026-07-18T21:46:26.229Z",
+  "approver": "Sparsh",
+  "designSystem": {
+    "gitHead": "3573895c24e67160f2b14012df65d6c0e069f603",
+    "branch": "Avatar",
+    "note": "Entire src/utilities/shade/** tree and shade-expander.ts are UNTRACKED relative to DS HEAD at freeze time."
+  },
+  "toolchain": {
+    "node": "v26.5.0",
+    "npm": "11.17.0",
+    "typescript": "5.8.3",
+    "jest": "30.0.5"
+  },
+  "canonicalMatrix": {
+    "dimensions": {
+      "patterns": [
+        "interactive",
+        "surface",
+        "field",
+        "mark",
+        "chrome"
+      ],
+      "variantsIncluded": [
+        "solid",
+        "outline",
+        "solidOutline",
+        "ghost"
+      ],
+      "variantsExcludedFromMatrix": [
+        "underline",
+        "solidUnderline"
+      ],
+      "appearances": [
+        "strong",
+        "soft",
+        "dualTone",
+        "onColor"
+      ],
+      "palettes": [
+        "brand",
+        "danger",
+        "success",
+        "warning",
+        "info",
+        "neutral",
+        "white",
+        "black",
+        "transparent",
+        "accent-1"
+      ],
+      "schemes": [
+        "light",
+        "dark"
+      ],
+      "adaptiveFlags": [
+        true,
+        false
+      ],
+      "note": "States/channels constrained by PATTERN_RULES; adaptive×scheme expands each cell to 4 emit rows (adaptive×2 schemes + scheme-light + scheme-dark)."
+    },
+    "dsSnapshot": {
+      "path": "src/utilities/shade/tests/__snapshots__/canonical-matrix.golden.test.ts.snap",
+      "sha256": "6b0283b4e1d87d96d16b7773902f3530b8bafcf5290e2f8bb556e436f29f2277",
+      "rowCount": 142080,
+      "uniqueKeyCount": 106560,
+      "emitModeCounts": {
+        "adaptive": 71040,
+        "scheme-light": 35520,
+        "scheme-dark": 35520
+      }
+    },
+    "frameworkSnapshot": {
+      "path": "src/utilities/shade/tests/__snapshots__/canonical-matrix.golden.test.ts.snap",
+      "sha256": "6d46f3f543285a29ef46eb672a62542400546be3b8bc4d6788c6847b2925597c",
+      "rowCount": 142080,
+      "uniqueKeyCount": 106560
+    }
+  },
+  "hashedFiles": [
+    {
+      "path": "src/jit/scanner/shade-expander.ts",
+      "sha256": "1b0aa5fb3637565915e9bc47a2b9e57da3d4063bfd9f4d9b5e36800a8c36360a",
+      "bytes": 2824,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/jit/scanner/shade-expander.ts"
+    },
+    {
+      "path": "src/utilities/shade/README.md",
+      "sha256": "76c3d5595c70cd23a9833f616407e4f54b5d2c867d52259dccafe9d3c9c06f59",
+      "bytes": 4160,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/README.md"
+    },
+    {
+      "path": "src/utilities/shade/api/control-compose.ts",
+      "sha256": "ff57cf9a05ea1eeed1924c48fb23e967af87faf711f6016cf782202c59a47b64",
+      "bytes": 3762,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/api/control-compose.ts"
+    },
+    {
+      "path": "src/utilities/shade/api/index.ts",
+      "sha256": "befb5479be1867d69dd341838cb041afea0c54d62deab5dfa6889ed51fb71d80",
+      "bytes": 2310,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/api/index.ts"
+    },
+    {
+      "path": "src/utilities/shade/api/selection-compose.ts",
+      "sha256": "18c7f92100acba06dd35f396d3384f442b4072462f3192c8d79174d18e65c339",
+      "bytes": 2742,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/api/selection-compose.ts"
+    },
+    {
+      "path": "src/utilities/shade/api/shims.ts",
+      "sha256": "35e3c9613c1eac9dedb262ccd4eeccbdab3569a00323342ef5974bca9917881a",
+      "bytes": 19883,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/api/shims.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/appearance-profile.ts",
+      "sha256": "e8e3c3363c0ee17ce9f669c4fb85cdcf5f1f4866f9168d9d199e87cefd939f36",
+      "bytes": 1210,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/appearance-profile.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/canonical-resolver.ts",
+      "sha256": "8dee00bd35462bfbc43c35aa793fd3d976015f6fb158aefa4074579a9ba7d065",
+      "bytes": 3741,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/canonical-resolver.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/composer.ts",
+      "sha256": "309cf46f9c2e3f0928d354ab7e50a646fa1d71288a7b18b5fc205a05ec1622f4",
+      "bytes": 7128,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/composer.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/dimensions.ts",
+      "sha256": "40a5d8d1453c85fbf576c7b9712dadcff0b5c52cbe73f29e60b530db20f7a7b8",
+      "bytes": 2804,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/dimensions.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/interactive-recipe.ts",
+      "sha256": "e64bff862eaaeee11895790339af948190a35623213d2c08d9cdcc000d3e16f7",
+      "bytes": 22064,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/interactive-recipe.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/literal-transform.ts",
+      "sha256": "9e0ca07c10b698546306e5576bc24d8ccdc7e1bd77b568728d641556ab145ac5",
+      "bytes": 4967,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/literal-transform.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/palette-classify.ts",
+      "sha256": "641afae82e0c863faf7f211e8108eae94b795a58fcf23e3b88e89a2d9f17e550",
+      "bytes": 784,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/palette-classify.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/patterns.ts",
+      "sha256": "6c61a1d1f87b4de332dee406e40157c2971b2ba3af54f975bb644d6b8a7ecae5",
+      "bytes": 2043,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/patterns.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/state-progression.ts",
+      "sha256": "9d6f04c7fe9f231e2102159820b0e5bd395d82c4ade673c2de1827598cd9754e",
+      "bytes": 3123,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/state-progression.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/surface-recipe.ts",
+      "sha256": "61b1f659f6d316d2d4bbb4b52f3be85b54f53f63f2816f31a6351cc00881d0c7",
+      "bytes": 3156,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/surface-recipe.ts"
+    },
+    {
+      "path": "src/utilities/shade/core/variant-topology.ts",
+      "sha256": "f357079a9c479901e5bf8227c9390aabad1e6096bf3460b11204a6f26b0ea041",
+      "bytes": 1417,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/core/variant-topology.ts"
+    },
+    {
+      "path": "src/utilities/shade/docs/centralized-shade-system-reference.md",
+      "sha256": "3302353886c6d9d1808561cdd11072fb8afeacdb9514a437f08223071ea281c7",
+      "bytes": 16828,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/docs/centralized-shade-system-reference.md"
+    },
+    {
+      "path": "src/utilities/shade/docs/vocabulary.md",
+      "sha256": "6c8899a6a9f036f481507547ad7d70f85467a02db6d9d621600af83342ae09a8",
+      "bytes": 1135,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/docs/vocabulary.md"
+    },
+    {
+      "path": "src/utilities/shade/fixtures/canonical-matrix.ts",
+      "sha256": "7d9775ad8478f0be29da715cad1f8e600ef36c222a976345a2d92d2468b57986",
+      "bytes": 2270,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/fixtures/canonical-matrix.ts"
+    },
+    {
+      "path": "src/utilities/shade/fixtures/matrix.ts",
+      "sha256": "03c08ed5920a59ec23d2bfe09c8b058fcf3a85fe48906b059f7d95936799e3e1",
+      "bytes": 2424,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/fixtures/matrix.ts"
+    },
+    {
+      "path": "src/utilities/shade/fixtures/split-path-divergence-allowlist.json",
+      "sha256": "bc6dc51dd170e9d04caaadefb2c0022f171be7699688c4e9475999f1fde2aa4a",
+      "bytes": 23,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/fixtures/split-path-divergence-allowlist.json"
+    },
+    {
+      "path": "src/utilities/shade/index.ts",
+      "sha256": "40027e26ee796d0077fae8e31a31d439a703a9549d409fc98ed18be49e840712",
+      "bytes": 2370,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/index.ts"
+    },
+    {
+      "path": "src/utilities/shade/registry.ts",
+      "sha256": "f91032058cc1a0cba4227ac6f69e2664e603f601d84fa91a3305141ca4903d73",
+      "bytes": 1622,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/registry.ts"
+    },
+    {
+      "path": "src/utilities/shade/stories/SemanticShadeStudio.tsx",
+      "sha256": "80956551f74092d878ba702e4ac0a3bffee340aee30de87e228f24da5696601e",
+      "bytes": 14763,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/stories/SemanticShadeStudio.tsx"
+    },
+    {
+      "path": "src/utilities/shade/stories/ShadeStudio.stories.tsx",
+      "sha256": "b2d0de679c05d66c2ccf3a1fc8c54ef13c994dbed541092a49416a5881b1ce65",
+      "bytes": 412,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/stories/ShadeStudio.stories.tsx"
+    },
+    {
+      "path": "src/utilities/shade/tests/__snapshots__/canonical-matrix.golden.test.ts.snap",
+      "sha256": "6b0283b4e1d87d96d16b7773902f3530b8bafcf5290e2f8bb556e436f29f2277",
+      "bytes": 18015984,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/__snapshots__/canonical-matrix.golden.test.ts.snap"
+    },
+    {
+      "path": "src/utilities/shade/tests/api-contract.test.ts",
+      "sha256": "b46cbd773c5bd609f32582bccbc0071ad9f7035af6e3af794ac67bb2c97fe107",
+      "bytes": 2881,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/api-contract.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/button-parity-audit.test.ts",
+      "sha256": "6b487ea3de4bf8cee7889849ace67400089021a96f64fc788a8fae1c6dae5abd",
+      "bytes": 2162,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/button-parity-audit.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/canonical-matrix.golden.test.ts",
+      "sha256": "57adbf96cdb95cad3594892ad05e455b201524c3531b7982785ca7bc269c9275",
+      "bytes": 816,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/canonical-matrix.golden.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/component-parity-audit.test.ts",
+      "sha256": "28c9a5c69e79e5ca7328e434fbbb08faf8e120915f58c4d424868ad44cbeda56",
+      "bytes": 8689,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/component-parity-audit.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/composition-proofs.test.ts",
+      "sha256": "07b9dc783aa86990dfccc3961c0ae64f5087e5206df60a8099a64881ea59b2aa",
+      "bytes": 1332,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/composition-proofs.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/governance.test.ts",
+      "sha256": "4e963d5477a5268aa7b5456d9a8014a233d17dc6161b7060d7d1986ea01c0154",
+      "bytes": 1345,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/governance.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/high-risk-component-parity.test.ts",
+      "sha256": "f17b6bd9b261cf583943395faf1a935fa921f051b24dcff201b8224b6c8e5f56",
+      "bytes": 3010,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/high-risk-component-parity.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/literal-transform.test.ts",
+      "sha256": "5a57f067b05cdace38d9d9a4b4ea7dfafcb42007daca1de55668dede9ee504d5",
+      "bytes": 826,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/literal-transform.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/semantic-invariants.test.ts",
+      "sha256": "2abd50a33992530654ddfcd96b21ed761ec5d9aa9ced01beccc49ea0bf1a55fb",
+      "bytes": 1015,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/semantic-invariants.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/split-path-equivalence.test.ts",
+      "sha256": "f7b66979361cee8ce3c42adf840d6fe492ee94287d59c224b19eb2c4b04a9969",
+      "bytes": 1817,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/split-path-equivalence.test.ts"
+    },
+    {
+      "path": "src/utilities/shade/tests/topology-appearance-progression.test.ts",
+      "sha256": "cdccce065ec31c2c1dd045054f5bbbdd88ff99d20d90a7a3186cb150c27b40d6",
+      "bytes": 1199,
+      "tracked": false,
+      "dirty": true,
+      "status": "untracked",
+      "porcelain": "?? src/utilities/shade/tests/topology-appearance-progression.test.ts"
+    }
+  ],
+  "summary": {
+    "fileCount": 38,
+    "untrackedCount": 38,
+    "dirtyCount": 38,
+    "cleanTrackedCount": 0
+  }
+}

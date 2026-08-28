@@ -1,0 +1,281 @@
+{
+  "name": "@inventive-ui/framework",
+  "version": "1.0.86",
+  "description": "Inventive UI Framework - Utility-first CSS framework with semantic tokens, theme system, and compile-time CSS generation for React and Next.js",
+  "homepage": "https://docs.inventive-ui.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inventive-UI/Framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Inventive-UI/Framework/issues"
+  },
+  "type": "module",
+  "keywords": [
+    "ui-framework",
+    "design-system",
+    "css-framework",
+    "utility-first",
+    "react",
+    "nextjs",
+    "tailwind-alternative",
+    "theme-system",
+    "css-in-js",
+    "semantic-tokens",
+    "typescript"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "react-server": "./dist/index.esm.js",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.esm.js"
+    },
+    "./shade": {
+      "types": "./dist/shade.d.ts",
+      "import": "./dist/shade.esm.js",
+      "require": "./dist/shade.cjs",
+      "default": "./dist/shade.esm.js"
+    },
+    "./vite": {
+      "types": "./integrations/vite/index.d.ts",
+      "import": "./integrations/vite/index.mjs",
+      "require": "./integrations/vite/index.mjs",
+      "default": "./integrations/vite/index.mjs"
+    },
+    "./webpack": {
+      "types": "./integrations/webpack/index.d.ts",
+      "import": "./integrations/webpack/index.mjs",
+      "require": "./integrations/webpack/index.cjs",
+      "default": "./integrations/webpack/index.mjs"
+    },
+    "./next": {
+      "types": "./integrations/next/index.d.ts",
+      "import": "./integrations/next/index.ts",
+      "require": "./integrations/next/index.ts",
+      "default": "./integrations/next/index.ts"
+    },
+    "./next/registry": {
+      "types": "./integrations/next/iui-registry.tsx",
+      "import": "./integrations/next/iui-registry.tsx",
+      "require": "./integrations/next/iui-registry.tsx",
+      "default": "./integrations/next/iui-registry.tsx"
+    },
+    "./next/bootstrap": {
+      "types": "./integrations/next/bootstrap.ts",
+      "import": "./integrations/next/bootstrap.ts",
+      "require": "./integrations/next/bootstrap.ts",
+      "default": "./integrations/next/bootstrap.ts"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "import": "./dist/server/index.esm.js",
+      "require": "./dist/server/index.cjs",
+      "default": "./dist/server/index.esm.js"
+    },
+    "./node/build-css-api": {
+      "import": "./dist/node/build-css-api.mjs",
+      "require": "./dist/node/build-css-api.cjs",
+      "default": "./dist/node/build-css-api.mjs"
+    },
+    "./config": {
+      "types": "./dist/config.d.ts",
+      "import": "./dist/config.esm.js",
+      "require": "./dist/config.cjs",
+      "default": "./dist/config.esm.js"
+    },
+    "./slots": {
+      "types": "./dist/slots.d.ts",
+      "import": "./dist/slots.esm.js",
+      "require": "./dist/slots.cjs",
+      "default": "./dist/slots.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "sideEffects": [
+    "./dist/index.cjs",
+    "./dist/index.esm.js",
+    "./dist/slots.cjs",
+    "./dist/slots.esm.js"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "prepublish:check": "npm run build && npm run verify:pre-publish",
+    "verify:pre-publish": "node scripts/verify-pre-publish.mjs",
+    "build": "npm run build:ts && npm run build:node && npm run build:config && node scripts/copy-dts.mjs",
+    "build:config": "rollup -c rollup.config.config.js",
+    "prebuild": "node scripts/generate-slot-registry.mjs && node scripts/extract-utility-prefixes.mjs",
+    "build:ts": "rollup -c",
+    "build:node": "rollup -c rollup.config.node.js",
+    "dev": "rollup -c --watch",
+    "predev": "node scripts/generate-slot-registry.mjs",
+    "test": "jest --passWithNoTests",
+    "test:shade": "node node_modules/jest/bin/jest.js --config package.json --rootDir \"$PWD\" src/utilities/shade/tests --runInBand --no-cache",
+    "test:shade-parity": "node node_modules/jest/bin/jest.js --config package.json --rootDir \"$PWD\" src/utilities/shade/tests/legacy-parity.test.ts --runInBand --no-cache",
+    "extract:utility-prefixes": "node scripts/extract-utility-prefixes.mjs",
+    "test:scan": "node --test integrations/shared/__tests__/scan-used-classes.test.mjs integrations/shared/__tests__/scan-used-classes-ast.test.mjs integrations/shared/__tests__/scan-shade-calls.test.mjs integrations/shared/__tests__/scan-palette-patterns.test.mjs integrations/shared/__tests__/resolve-build-scan.test.mjs integrations/shared/__tests__/scan-package-hoist.test.mjs integrations/shared/__tests__/generate-build-css-scan-first.test.mjs integrations/shared/__tests__/minify-build-css.test.mjs integrations/shared/__tests__/generate-theme-init-script.test.mjs integrations/shared/__tests__/node-api-dist-exports.test.mjs integrations/shared/__tests__/shade-dist-exports.test.mjs integrations/shared/__tests__/reorder-head-assets.test.mjs integrations/shared/__tests__/validate-build-css.test.mjs integrations/shared/__tests__/utility-token-filter.test.mjs integrations/shared/__tests__/inject-build-styles-into-html.test.mjs integrations/shared/__tests__/build-cache.test.mjs integrations/vite/__tests__/react-cjs-resolve.test.mjs integrations/vite/__tests__/cjs-esm-bridge.test.mjs integrations/vite/__tests__/iui-build-css-startup.test.mjs integrations/vite/__tests__/scan-used-slot-assets.test.mjs",
+    "test:ssr": "node --test integrations/shared/__tests__/ssr-runtime-safety.test.mjs",
+    "test:packed-consumer": "node --test integrations/shared/__tests__/packed-consumer.test.mjs",
+    "test:perf": "node --test integrations/shared/__tests__/shade-perf-budgets.test.mjs",
+    "test:pack": "node --test integrations/shared/__tests__/pack-inspect.test.mjs",
+    "test:shade-gates": "npm run test:ssr && npm run test:perf && npm run test:pack && npm run test:packed-consumer",
+    "test:build-css": "node scripts/test-build-css.mjs",
+    "test:compile": "npm run test:scan && npm run test:build-css",
+    "test:dist": "npm run test:compile && npm run test:shade-gates",
+    "test:integration-apps": "node scripts/verify-integration-apps.mjs",
+    "verify:pack": "node scripts/verify-pack-gates.mjs",
+    "verify:cjs-require": "node scripts/verify-cjs-require.mjs",
+    "dev:test-app": "npm run build && npm install --prefix ../test-app && npm run dev --prefix ../test-app",
+    "dev:test-app-webpack": "npm run build && npm install --prefix ../test-app-webpack && npm run dev --prefix ../test-app-webpack",
+    "dev:test-app-next": "npm run build && npm install --prefix ../test-app-next && npm run dev --prefix ../test-app-next",
+    "build:test-app-webpack": "npm run build && npm install --prefix ../test-app-webpack && npm run build --prefix ../test-app-webpack",
+    "build:test-app-next": "npm run build && npm install --prefix ../test-app-next && npm run build --prefix ../test-app-next",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint",
+    "lint:a11y": "eslint --ext .tsx,.ts src/ --rule 'jsx-a11y/rule-name: 2'"
+  },
+  "bin": {
+    "iui-init": "scripts/createconfig.js"
+  },
+  "files": [
+    "dist",
+    "integrations/vite",
+    "integrations/webpack",
+    "integrations/next",
+    "integrations/shared/*.mjs",
+    "integrations/shared/*.cjs",
+    "integrations/shared/*.js",
+    "integrations/shared/*.ts",
+    "integrations/shared/*.tsx",
+    "integrations/shared/*.d.ts",
+    "integrations/shared/generated",
+    "!integrations/**/__tests__/**",
+    "!integrations/**/__fixtures__/**",
+    "!dist/**/tests/**",
+    "!dist/**/fixtures/**",
+    "!dist/**/*.test.d.ts",
+    "!dist/**/*.spec.d.ts",
+    "!migration-tools/**",
+    "!src/utilities/shade/migration/**",
+    "scripts/createconfig.js",
+    "scripts/load-framework-theme-defaults.mjs",
+    "scripts/generate-slot-registry.mjs",
+    "scripts/copy-dts.mjs",
+    "src/engine/tokens/values.ts"
+  ],
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.17.4",
+    "@eslint/js": "9.38.0",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "0.4.4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.1",
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.7",
+    "@typescript-eslint/eslint-plugin": "8.38.0",
+    "@typescript-eslint/parser": "8.38.0",
+    "eslint": "9.31.0",
+    "eslint-plugin-custom-rules": "file:eslint",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "glob": "11.1.0",
+    "globals": "16.4.0",
+    "jest": "30.0.5",
+    "jest-axe": "10.0.0",
+    "jest-environment-jsdom": "30.0.5",
+    "next": "^16.1.6",
+    "publint": "0.3.22",
+    "rollup": "^4.28.1",
+    "rollup-plugin-obfuscator": "1.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vite": "^7.2.4",
+    "webpack": "^5.104.1"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "peerDependencies": {
+    "next": ">=14.0.0",
+    "react": ">=18.0.0 || >=19.0.0",
+    "react-dom": ">=18.0.0 || >=19.0.0",
+    "vite": ">=4.0.0",
+    "webpack": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true,
+      "description": "Required only for Next.js projects"
+    },
+    "vite": {
+      "optional": true,
+      "description": "Required only when using @inventive-ui/framework/vite"
+    },
+    "webpack": {
+      "optional": true,
+      "description": "Required only when using @inventive-ui/framework/webpack"
+    }
+  },
+  "dependencies": {
+    "@babel/parser": "^7.29.7",
+    "@babel/traverse": "^7.29.7",
+    "class-variance-authority": "0.7.1",
+    "clsx": "^2.1.1",
+    "jiti": "^2.6.1",
+    "postcss": "8.5.19"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.test.{ts,tsx}",
+      "**/*.test.{ts,tsx}"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/*.stories.{ts,tsx}",
+      "!src/types/**/*"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": {
+          "jsx": "react-jsx"
+        }
+      }
+    }
+  }
+}

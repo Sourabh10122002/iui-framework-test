@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "G0-UNEXPLAINED-INVENTORY",
+  "decisionRefs": [
+    "SD-001",
+    "SD-004"
+  ],
+  "gateRefs": [
+    "G0"
+  ],
+  "provenanceManifest": "src/utilities/shade/migration/legacy-shade-provenance.json",
+  "provenanceSha256": "47e06c3ea4f31f9fae12748d37a135f6f5d700e32577260b832b98a5383d1933",
+  "oracleManifest": "src/utilities/shade/tests/fixtures/legacy-oracle/manifest.json",
+  "timestamp": "2026-07-18T22:00:53.335Z",
+  "purpose": "Tracked G0 debt: genuine oracle mismatches NOT covered by intentional deviation allowlist (DEV-*). Emptied in Stage 2: ADAPTIVE_DARK_CLASS_MISMATCH (840 keys) resolved by aligning shouldEmitInteractiveDark to the DS oracle. Not a silence mechanism.",
+  "count": 0,
+  "inventorySha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "entries": []
+}

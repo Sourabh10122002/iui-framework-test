@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "intentional-deviation-allowlist",
+  "decisionRefs": ["SD-002"],
+  "gateRefs": ["G0"],
+  "provenanceManifest": "src/utilities/shade/migration/legacy-shade-provenance.json",
+  "note": "Active Framework corrections that intentionally diverge from the historical DS oracle (SD-001). Matching is limited to the corrected full-path requests; unrelated differences remain failures.",
+  "entries": [
+    {
+      "id": "DEV-001",
+      "topic": "transparent-full-path",
+      "status": "active",
+      "decisionId": "SD-002",
+      "approver": "Sparsh",
+      "reason": "The DS full recipe casts every literal to white|black, so transparent takes black rows. Framework now resolves transparent from the existing literal channel tables for both interactive and surface full emission.",
+      "match": {
+        "palette": "transparent",
+        "scopes": [
+          {
+            "pattern": "interactive",
+            "channels": ["fill", "text", "border", "outline", "ring", "full"]
+          },
+          {
+            "pattern": "surface",
+            "channels": ["full"]
+          }
+        ],
+        "variants": ["solid", "outline", "solidOutline", "ghost", "underline", "solidUnderline"],
+        "appearances": ["strong", "soft", "dualTone", "onColor"],
+        "emitKeys": ["adaptive", "scheme-light", "scheme-dark"]
+      },
+      "beforeExample": "interactive|solid|strong|default|full|transparent|adaptive => bg-black text-white outline-none border-none dark:bg-white dark:text-black dark:outline-none dark:border-none",
+      "afterExample": "interactive|solid|strong|default|full|transparent|adaptive => bg-transparent text-neutral-900 outline-none border-none dark:bg-transparent dark:text-neutral-100 dark:outline-none dark:border-none",
+      "implementation": "active — full interactive and surface paths use literal-transform transparent tables; interactive slices share that authority, while white and black keep their legacy recipe rows",
+      "residualDualPathGap": "None for emitted topology channels; full and sliced requests share the same transparent token authority."
+    },
+    {
+      "id": "DEV-002",
+      "topic": "underline-solidUnderline-recipes",
+      "status": "active",
+      "decisionId": "SD-002",
+      "approver": "Sparsh",
+      "reason": "The DS full recipe has no underline rows and falls back to transparent fill plus the raw palette name. Framework now derives underline from outline rows and solidUnderline from solidOutline rows, then emits exactly their declared text/border/ring or fill/text/border/ring topology.",
+      "match": {
+        "channel": "full",
+        "patterns": ["interactive", "surface"],
+        "variants": ["underline", "solidUnderline"],
+        "appearances": ["strong", "soft", "dualTone", "onColor"],
+        "emitKeys": ["adaptive", "scheme-light", "scheme-dark"]
+      },
+      "beforeExample": "interactive|solidUnderline|strong|default|full|brand|adaptive => bg-transparent text-brand dark:bg-transparent dark:text-brand",
+      "afterExample": "interactive|solidUnderline|strong|default|full|brand|adaptive => bg-brand-500 text-white border-brand-800 ring-brand-800 dark:bg-brand-400 dark:text-neutral-950 dark:border-brand-200 dark:ring-brand-200",
+      "implementation": "active — affected full-path cases are included in the Framework canonical matrix as intentional Framework-only rows because the historical oracle omitted both variants",
+      "residualDualPathGap": "None for emitted topology channels; full and sliced requests resolve through the same underline recipe tokens."
+    }
+  ]
+}

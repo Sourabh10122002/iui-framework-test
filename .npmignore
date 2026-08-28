@@ -1,0 +1,78 @@
+# Tooling configs (published surface is dist/ + integrations; compile CSS uses dist/node)
+tsconfig.json
+rollup.config.js
+rollup.config.config.js
+rollup.config.node.js
+
+# Development files
+.github/
+.vscode/
+*.log
+*.tsbuildinfo
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Test files (explicit — files whitelist includes src/server and can bypass ** globs)
+src/server/*.test.ts
+src/server/**/*.test.ts
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+**/*.test.d.ts
+**/*.test.js
+__tests__/
+**/__tests__/
+coverage/
+integrations/shared/__tests__/
+integrations/shared/__fixtures__/
+*.test.d.ts
+**/*.test.d.ts
+
+# Dev/test scripts — not part of the published CLI/prebuild surface
+scripts/test-build-css.mjs
+scripts/verify-integration-apps.mjs
+scripts/**/__tests__/
+scripts/**/*.test.*
+
+# Documentation (keep README.md)
+docs/
+*.md
+!README.md
+!LICENSE
+!CONTRIBUTING.md
+
+# Repo tests (not published — lives outside files whitelist too)
+tests/
+
+# Build artifacts
+node_modules/
+.cache/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Config files (users create their own)
+iui.config.ts
+eslint.config.js
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+src/server/__tests__/
+**/__tests__/**
+

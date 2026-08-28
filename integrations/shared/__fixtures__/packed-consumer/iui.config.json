@@ -1,0 +1,29 @@
+{
+  "theme": {
+    "colors": {
+      "brand": { "set": "#6366f1" },
+      "semantic": {
+        "success": "#22c55e",
+        "warning": "#f59e0b",
+        "danger": "#ef4444",
+        "info": "#3b82f6"
+      },
+      "neutral": {
+        "base": "#64748b",
+        "warm": "#78716c",
+        "cool": "#6b7280ff"
+      }
+    }
+  },
+  "build": {
+    "scanDirs": ["src"],
+    "scanPackages": [],
+    "packageSafelist": false,
+    "includeThemePresets": false,
+    "resolvePalettePatterns": false,
+    "includeArbitraryScan": false,
+    "includeShadeMatrix": false,
+    "shadeDiagnostics": "error",
+    "minify": false
+  }
+}

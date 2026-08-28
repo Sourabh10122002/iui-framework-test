@@ -1,0 +1,19 @@
+{
+  "gates": [
+    { "id": "D-ssr", "script": "test:ssr", "required": true },
+    { "id": "E-packed-consumer", "script": "test:packed-consumer", "required": true },
+    { "id": "F-perf-budgets", "script": "test:perf", "required": true },
+    { "id": "G-pack-inspect", "script": "test:pack", "required": true },
+    { "id": "shade-parity", "script": "test:shade-parity", "required": true },
+    { "id": "shade-suite", "script": "test:shade", "required": true },
+    { "id": "compile", "script": "test:compile", "required": true },
+    { "id": "build", "script": "build", "required": true }
+  ],
+  "keepMigrationToolsUntil": "all-gates-green-and-components-cutover-started",
+  "rollbackTriggers": [
+    "legacy-parity unexplained diffs increase",
+    "scan-first expands full shade matrix by default",
+    "SSR import touches window/document",
+    "packed tarball ships migration-tools or oracle fixtures"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "timestamp": "2026-07-18T21:46:26.229Z",
+  "provenanceManifest": "legacy-shade-provenance.json",
+  "framework": {
+    "outPath": "/Users/sparsh/Framework/src/utilities/shade/migration/baseline-framework-git-status.txt",
+    "statusSha256": "3e026a2c6af0c6995151a45ce890f3082954dc59c0e74c3372d535ba47f22981",
+    "diffSha256": "047fbcc79ebf1b2a53effc3eb6ac2034e8a4241490aac0f71af8a9c05e6fc44e",
+    "untrackedListSha256": "90c0c4110015f915dda649307139f840ab8cfa031dfb45f6b24020b61b30108e",
+    "porcelainLines": 7
+  },
+  "components": {
+    "outPath": "/Users/sparsh/Framework/src/utilities/shade/migration/baseline-components-git-status.txt",
+    "statusSha256": "4d88ed1b22ab2d1982d30fc9569025f480368a93409eb433f29e8edfa196daee",
+    "diffSha256": "83101c10a60568ec9ac1eba3837e3207e84f2d811f80048402ea558d45236e61",
+    "untrackedListSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "porcelainLines": 2
+  }
+}

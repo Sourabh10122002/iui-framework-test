@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "establishedAt": "2026-07-19",
+  "notes": "Baseline from Framework shade migration Stage F. Size budgets use +20% tolerance. Timing uses absolute caps (CI variance).",
+  "tolerancePct": 0.2,
+  "bundles": {
+    "shade.esm": { "raw": 29139, "gzip": 6259 },
+    "shade.cjs": { "raw": 29168, "gzip": 6261 },
+    "index.esm": { "raw": 187309, "gzip": 43468 },
+    "index.cjs": { "raw": 188830, "gzip": 43710 }
+  },
+  "treeShake": {
+    "cnOnlyMaxBytes": 250000,
+    "shadeImportMaxBytes": 45000,
+    "cnForbiddenPatterns": [
+      "composeSemantic",
+      "shadeRegistry",
+      "interactive-recipe",
+      "surface-recipe"
+    ]
+  },
+  "timing": {
+    "scanMsMax": 500,
+    "scanFirstBuildMsMax": 2000,
+    "matrixBuildMsMax": 15000,
+    "scanFirstMaxClasses": 100,
+    "matrixMinClassMultiple": 5
+  }
+}

@@ -1,0 +1,10 @@
+=== git status --porcelain ===
+ M package-lock.json
+ M package.json
+
+=== git diff HEAD (sha256 below) ===
+DIFF_SHA256=83101c10a60568ec9ac1eba3837e3207e84f2d811f80048402ea558d45236e61
+DIFF_BYTES=35344
+
+=== untracked files ===
+UNTRACKED_LIST_SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855

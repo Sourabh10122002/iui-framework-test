@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "timestamp": "2026-07-18T21:46:26.229Z",
+  "provenanceManifest": "legacy-shade-provenance.json",
+  "decisionRefs": [
+    "SD-001",
+    "SD-002",
+    "SD-004"
+  ],
+  "indexDiffCount": 1680,
+  "uniqueKeyDiffCount": 840,
+  "classes": {
+    "ADAPTIVE_DARK_CLASS_MISMATCH": {
+      "uniqueKeyCount": 840,
+      "indexCount": 1680,
+      "adjudication": {
+        "target": "design-system-oracle",
+        "deviationId": null,
+        "decisionId": "SD-001",
+        "note": "Framework must eventually match DS golden output for this class."
+      },
+      "examples": [
+        {
+          "key": "interactive|solid|soft|default|full|brand|adaptive",
+          "dsClasses": "bg-brand-100 text-brand-700 outline-none border-none",
+          "fwClasses": "bg-brand-100 text-brand-700 outline-none border-none dark:bg-brand-100 dark:text-brand-700 dark:outline-none dark:border-none"
+        },
+        {
+          "key": "interactive|solid|soft|default|full|danger|adaptive",
+          "dsClasses": "bg-danger-100 text-danger-700 outline-none border-none",
+          "fwClasses": "bg-danger-100 text-danger-700 outline-none border-none dark:bg-danger-100 dark:text-danger-700 dark:outline-none dark:border-none"
+        },
+        {
+          "key": "interactive|solid|soft|default|full|success|adaptive",
+          "dsClasses": "bg-success-100 text-success-700 outline-none border-none",
+          "fwClasses": "bg-success-100 text-success-700 outline-none border-none dark:bg-success-100 dark:text-success-700 dark:outline-none dark:border-none"
+        }
+      ]
+    }
+  }
+}
